@@ -1,7 +1,7 @@
 import { elements as el } from "./elements";
 class Header {
-  checkIfCartHasItems() {
-    cy.get(el.cartBadge).should("be.visible").and("have.text", "1");
+  checkIfCartHasItems(itemQtd) {
+    cy.get(el.cartBadge).should("be.visible").and("have.text", itemQtd);
   }
 
   checkIfCartHasNoItems() {

@@ -10,9 +10,11 @@ describe("Cart", () => {
   });
 
   it("Add product to cart with success", () => {
+    const itemQtd = "1";
+
     Inventory.addProduct();
 
-    Header.checkIfCartHasItems();
+    Header.checkIfCartHasItems(itemQtd);
 
     Header.navigateToCart();
 
