@@ -5,12 +5,16 @@ class Inventory {
     cy.url().should("eq", `${BASE_URL}inventory.html`);
   }
 
-  addProduct() {
-    cy.get(el.addToCart).click();
+  addProduct(productName) {
+    cy.get(el.addToCart(productName)).click();
   }
 
-  removeProduct() {
-    cy.get(el.removeToCart).click();
+  removeProduct(productName) {
+    cy.get(el.removeToCart(productName)).click();
+  }
+
+  formatProductName(name) {
+    return name.toLowerCase().replace(/\s+/g, "-");
   }
 }
 

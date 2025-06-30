@@ -18,7 +18,11 @@ describe("Cart", () => {
 
     const itemQtd = "1";
 
-    Inventory.addProduct();
+    var productName = "Sauce Labs Backpack";
+
+    var productName = Inventory.formatProductName(productName);
+
+    Inventory.addProduct(productName);
 
     Header.checkIfCartHasItems(itemQtd);
 
@@ -30,9 +34,13 @@ describe("Cart", () => {
   it("Remove product to cart with success", () => {
     Login.insertCredentials(loginData.usernameValid, loginData.passwordValid);
 
-    Inventory.addProduct();
+    var productName = "Sauce Labs Backpack";
 
-    Inventory.removeProduct();
+    var productName = Inventory.formatProductName(productName);
+
+    Inventory.addProduct(productName);
+
+    Inventory.removeProduct(productName);
 
     Header.checkIfCartHasNoItems();
   });
