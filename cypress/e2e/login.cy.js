@@ -3,7 +3,7 @@ import Inventory from "../pages/inventory";
 
 describe("Login", () => {
   beforeEach(() => {
-    cy.visit("https://www.saucedemo.com/");
+    Login.acessPage();
   });
 
   it("Login with valid user and password", () => {

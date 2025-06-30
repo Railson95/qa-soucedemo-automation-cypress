@@ -5,7 +5,7 @@ import Cart from "../pages/cart";
 
 describe("Cart", () => {
   beforeEach(() => {
-    cy.visit("https://www.saucedemo.com/");
+    Login.acessPage();
     Login.insertCredentials("standard_user", "secret_sauce");
   });
 

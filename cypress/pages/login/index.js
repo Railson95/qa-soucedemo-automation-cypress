@@ -14,6 +14,10 @@ class Login {
       "Epic sadface: Username and password do not match any user in this service"
     );
   }
+
+  acessPage() {
+    cy.visit("https://www.saucedemo.com/");
+  }
 }
 
 export default new Login();
