@@ -4,12 +4,18 @@ import Header from "../pages/header";
 import Cart from "../pages/cart";
 
 describe("Cart", () => {
+  let loginData;
+
   beforeEach(() => {
     Login.acessPage();
-    Login.insertCredentials("standard_user", "secret_sauce");
+    cy.fixture("loginData").then((data) => {
+      loginData = data;
+    });
   });
 
   it("Add product to cart with success", () => {
+    Login.insertCredentials(loginData.usernameValid, loginData.passwordValid);
+
     const itemQtd = "1";
 
     Inventory.addProduct();
@@ -22,6 +28,8 @@ describe("Cart", () => {
   });
 
   it("Remove product to cart with success", () => {
+    Login.insertCredentials(loginData.usernameValid, loginData.passwordValid);
+
     Inventory.addProduct();
 
     Inventory.removeProduct();
