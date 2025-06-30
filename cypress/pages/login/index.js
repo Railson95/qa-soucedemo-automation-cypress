@@ -1,4 +1,5 @@
 import { elements as el } from "./elements";
+import { BASE_URL } from "../../support/constants";
 
 class Login {
   insertCredentials(username, password) {
@@ -16,7 +17,7 @@ class Login {
   }
 
   acessPage() {
-    cy.visit("https://www.saucedemo.com/");
+    cy.visit(BASE_URL);
   }
 }
 

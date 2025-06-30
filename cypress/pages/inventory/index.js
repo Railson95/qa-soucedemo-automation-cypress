@@ -1,7 +1,8 @@
 import { elements as el } from "./elements";
+import { BASE_URL } from "../../support/constants";
 class Inventory {
   checkPageAccess() {
-    cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
+    cy.url().should("eq", `${BASE_URL}inventory.html`);
   }
 
   addProduct() {
